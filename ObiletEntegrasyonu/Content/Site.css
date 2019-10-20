@@ -1,0 +1,351 @@
+﻿body {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+a.logo {
+    color: #ff0000;
+    font-size: 3rem;
+    float: left;
+    width: auto;
+    margin-right: 3rem;
+}
+
+a:hover.logo {
+ text-decoration:none
+     
+}
+
+ul.menu.left {
+    list-style: none;
+    font-size: 2rem;
+    height: 4rem;
+    line-height: 4rem;
+}
+
+ .menu.left a {
+   color:#ff0000;
+}
+    .menu.left a:hover {
+        text-decoration: none;
+    }
+
+#search-container {
+    background-image: url(https://s3.eu-central-1.amazonaws.com/static.obilet.com/images/page-banner/sonbahar_background.png);
+    background-position: center center;
+    background-size: cover;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    min-height:350px;
+}
+
+#search {
+    min-width: 30em;
+    max-width: 30em;
+    width: 42%;
+    max-height: 22.5em;
+    background: #fff;
+    border-radius: .5em;
+    min-height: 21em;
+}
+
+.origin.group, .destination.group {
+    width: 100%;
+}
+
+.departureTime .group {
+    width: 100%;
+    margin-top:1rem;
+}
+.origin.group {
+    border-bottom: 1px solid rgba(3, 3, 6, .2);
+}
+#search .group {
+    padding: .5em 1em;
+}
+.origin.group label, .destination.group label, .departureTime.group label {
+    width: 100%;
+    font-size: 1.3rem;
+    margin: 1rem 0 0 3.5rem;
+    color: #1bacd2;
+}
+
+.origin.group i.fa.fa-bus, .destination.group i.fa.fa-bus, .departureTime.group i.fa.fa-calendar {
+    margin-right: 2rem;
+}
+input#origin-input, input#destination-input, input#departureTime-input {
+    border: 0;
+    min-height: 30px;
+    color: #808080;
+    width: 99%;
+}
+    input#origin-input:focus, input#destination-input:focus, input#departureTime-input:focus {
+        outline: none;
+    }
+.results, .destinationResults {
+    background-color: #fff;
+    z-index: 999;
+    position: absolute;
+    min-height: 22em;
+    width: 22em;
+}
+.results ul, .destinationResults ul {
+    list-style: none;
+    font-size: 1.5rem;
+    height: 2rem;
+    line-height: 3rem;
+}
+    .results ul li:hover, .destinationResults ul li:hover {
+        background-color: #ff0000
+    }
+
+
+button#result, button#destinationResult {
+    background-color: white;
+    border: 0;
+}
+    button#result:focus, button#destinationResult:focus {
+        outline: none;
+    }
+
+button#exchange {
+    transform: rotate(90deg);
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid;
+    margin-top: 2.5rem;
+    margin-left: 2rem;
+    border-radius: 15px;
+}
+    button#exchange:focus {
+        outline: none;
+    }
+button#today {
+    margin-top: -2rem;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 4em;
+}
+
+button#tomorrow {
+    margin-top: 1rem;
+    background-color: #fff;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 4em;
+}
+
+.active {
+    background-color: gray !important;
+}
+
+div#ui-datepicker-div {
+    background-color: #fff;
+    margin: 2px;
+  
+}
+
+    div#ui-datepicker-div table {
+        width: 15em !important;
+    }
+button#search-button {
+    height: 4rem;
+    background-color: #2f4eb4;
+    border: 1px solid #2f4eb4;
+    border-radius: 1rem;
+    color: #fff;
+    margin-top: 1.5rem;
+}
+
+.row.body-content {
+    margin-top: 2rem;
+}
+
+.container.journey {
+    background: #F3F3F3;
+}
+
+.itemJourney {
+    background-color: #fff;
+    border-bottom: 1px solid rgba(3, 3, 6, .2);
+    margin: 5px;
+    min-height: 7em;
+}
+
+.originLabel{
+    float: left;
+    margin: 5px;
+    width: 15%;
+    color: #192289;
+}
+.arrowOrigin
+{
+    float:left;
+    width:5%;
+}
+.destinationLabel {
+    float: left;
+    margin: 5px;
+    width: 44%;
+    color: #192289;
+    margin-left: 2rem;
+}
+.originDestinationLabel {
+    font-size: 1.5rem;
+    color: #2F4EB4;
+    margin: 10px 5px 10px 5px;
+}
+button.btn.btn-danger.price {
+    width: 7em;
+    margin-top: 3rem;
+}
+i.fa.fa-arrow-right.arrowOrigin {
+    float: left;
+    margin: 8px 5px 5px 5px;
+    font-size: 1rem;
+    color: #192289;
+}
+    .originLabel h4, .destinationLabel h4 {
+        color: #2F4EB4;
+        font-size: 1rem;
+    }
+.headerJourney {
+    background-color: #192289;
+    min-height: 3em;
+}
+button.backDate, button.nextDate {
+    float: left;
+    width: 5%;
+    margin: 13px 1px 13px 9px;
+    border: 0;
+    color: white;
+    background: transparent;
+}
+    button.backDate:focus, button.nextDate:focus { 
+        outline:none;
+    }
+    label.center-block.dateDepacture {
+        float: left;
+        text-align: center;
+        width: 85%;
+        font-size: 1.5rem;
+        line-height: 3em;
+        color: #fff;
+    }
+
+@media only screen and (max-width:767px) {
+    body {
+        padding-top: 0px;
+    }
+
+    header#header {
+        background: #2F4EB4;
+        min-height: 3rem;
+    }
+
+    #header .container {
+        display: none;
+    }
+
+    #search-container {
+        background-image: none;
+    }
+
+    a.logo {
+        font-size: 2rem;
+    }
+
+    .menu.left a {
+        font-size: 2rem;
+    }
+
+    #search {
+        width: 100%;
+        min-width: 20em;
+        max-width: 30em;
+        min-height: 22em;
+    }
+
+    input#origin-input, input#destination-input, input#departureTime-input {
+        width: 65%;
+    }
+
+    .originLabel .destinationLabel {
+        width: 25%;
+    }
+
+        .originLabel h4, .destinationLabel h4 {
+            margin-left: 2rem;
+        }
+
+    label.center-block.dateDepacture {
+        width:80%;
+    }
+    button.btn.btn-danger.price {
+        width:5em;
+        font-size: 1.2rem
+    }
+}
+@media only screen and (max-width:320px) {
+
+    body {
+        padding-top: 0px;
+    }
+
+    header#header {
+        background: #2F4EB4;
+        min-height: 3rem;
+    }
+
+    #header .container {
+        display: none;
+    }
+    #search-container{
+        background-image:none;
+    }
+    a.logo {
+        font-size: 2rem;
+    }
+
+    .menu.left a {
+        font-size: 2rem;
+    }
+
+    #search {
+        width: 100%;
+        min-width: 20em;
+        max-width: 30em;
+        min-height: 22em;
+    }
+
+    input#origin-input, input#destination-input, input#departureTime-input {
+        width: 60%;
+    }
+
+    .originLabel, .destinationLabel {
+        width: 30%;
+    }
+
+}

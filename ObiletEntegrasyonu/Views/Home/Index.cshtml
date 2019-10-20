@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Obilet Entegrasyonu";
+}
+@model ObiletEntegrasyonu.Models.GetBusLocationResponse
+
+
+
+<div id="search-container">
+    <div class="container">
+        <div id="search">
+            <div class="origin group">
+                <label for="origin-input">Kalkış Noktası</label>
+                <i class="fa fa-bus"></i>
+                <input id="origin-input" type="search" data-placeholder="İl veya ilçe adı yazın" placeholder="İl veya ilçe adı yazın">
+                <input id="origin-input-id" type="hidden" />
+                <button type="button" id="result">
+                    <i class="fa fa-arrow-down"></i>
+                </button>
+                <div class="results">
+                    <div class="state"></div>
+                    <ul>
+
+                        @if (Model != null && Model.data.Any())
+                        {
+                            foreach (var item in Model.data.Take(10))
+                            {
+                                <li class="item" data-id="@item.id" data-value="@item.name">@item.name</li>
+                            }
+
+                        }
+
+
+                    </ul>
+                </div>
+                <button type="button" id="exchange">
+                    <i class="fa fa-exchange"></i>
+                </button>
+            </div>
+            <div class="destination group">
+                <label for="destination-input">Varış Noktası</label>
+                <i class="fa fa-bus"></i>
+                <input id="destination-input" type="search" data-placeholder="İl veya ilçe adı yazın" placeholder="İl veya ilçe adı yazın">
+                <input id="destination-input-id" type="hidden" />
+                <button type="button" id="destinationResult">
+                    <i class="fa fa-arrow-down"></i>
+                </button>
+
+                <div class="destinationResults">
+                    <div class="state"></div>
+                    <ul>
+                        @if (Model != null && Model.data.Any())
+                        {
+                            foreach (var item in Model.data.Take(10))
+                            {
+                                <li class="item" data-id="@item.id" data-value="@item.name">@item.name</li>
+                            }
+
+                        }
+                      
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="departureTime group">
+                <label for="destinationTime-input">Tarih</label>
+                <i class="fa fa-calendar"></i>
+                <input id="departureTime-input">
+                <input id="departureTime" type="hidden">
+                <button type="button" id="today">Bugün</button>
+                <button type="button" id="tomorrow">Yarın</button>
+            </div>
+            <button id="search-button" class="center-block" type="submit">
+                OTOBÜS BİLETİ BUL
+
+            </button>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row body-content">
+        <div class="col-md-12">
+            <p>lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut laborelorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut laborelorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut laborelorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut laborelorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore</p>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+
+    <script src="~/Scripts/bootstrap-datepicker.js"></script>
+    <script>
+        $(document).ready(function () {
+            mainPage();
+        });
+    </script>
+}

@@ -1,0 +1,60 @@
+﻿@model ObiletEntegrasyonu.Models.getbusjourneyResponse
+@{
+    ViewBag.Title = "Seferler";
+}
+
+<div class="container journey">
+    <div class="row">
+        <div class="headerJourney">
+
+            <button type="button" class="backDate"><i class="fa fa-arrow-left"></i></button>
+            <label class="center-block dateDepacture"> @Model.data.First().journey.departure.ToString().Split(' ')[0].ToString() </label>
+            <button type="button" class="nextDate"><i class="fa fa-arrow-right"></i></button>
+            <input type="hidden" id="destinationId" value="@Model.data.First().destinationLocationId" />
+            <input type="hidden" id="originId" value="@Model.data.First().originLocationId" />
+        </div>
+    </div>
+
+    <div class="row">
+
+        @if (Model != null && Model.data.Any())
+        {
+            foreach (ObiletEntegrasyonu.Models.busJourneyResponse item in Model.data)
+            {
+                <div class="itemJourney">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-9 col-xs-9">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="originLabel"> <h4>Kalkış</h4></div>
+                                        <div class="arrowOrigin">&nbsp;</div>
+                                        <div class="destinationLabel"> <h4>Varış</h4>  </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="originLabel"> @item.journey.departure.ToString().Split(' ')[1].ToString() </div>
+                                    <i class="fa fa-arrow-right arrowOrigin"></i>
+                                    <div class="destinationLabel"> @item.journey.arrival.ToString()  </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="originDestinationLabel">
+                                        @item.journey.origin - @item.journey.destination
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="col-md-3 col-xs-3">
+                                <button class="btn btn-danger price">@item.journey.orginalPrice @item.journey.currency</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        }
+
+    </div>
+</div>
+ 
